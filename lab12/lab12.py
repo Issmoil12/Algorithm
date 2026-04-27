@@ -1,168 +1,182 @@
+# =========================
 # Задание 1
-print("Задание 1")
-students_grades = {
-    "Alice": 90,
-    "Bob": 75,
-    "Charlie": 82,
-    "Diana": 95,
-    "Ethan": 88
-}
+# =========================
+def task1():
+    students = {
+        "Ali": 85,
+        "Dana": 90,
+        "Arman": 78,
+        "Mira": 92
+    }
 
-for name, grade in students_grades.items():
-    print(f"{name} – {grade}")
+    print("\n1) Студенты и оценки:")
+    for name, grade in students.items():
+        print(name, "-", grade)
 
-print("\n" + "-"*50 + "\n")
 
+# =========================
 # Задание 2
-print("Задание 2")
-numbers = [5, 2, 5, 3, 2, 5]
-count_dict = {}
+# =========================
+def task2():
+    arr = [5, 2, 5, 3, 2, 5]
+    freq = {}
 
-for num in numbers:
-    if num in count_dict:
-        count_dict[num] += 1
-    else:
-        count_dict[num] = 1
+    for x in arr:
+        freq[x] = freq.get(x, 0) + 1
 
-print(count_dict)
+    print("\n2) Частота чисел:", freq)
 
-print("\n" + "-"*50 + "\n")
 
+# =========================
 # Задание 3
-print("Задание 3")
-text = "algorithm"
-char_count = {}
+# =========================
+def task3():
+    text = "algorithm"
+    freq = {}
 
-for char in text:
-    if char in char_count:
-        char_count[char] += 1
-    else:
-        char_count[char] = 1
+    for ch in text:
+        freq[ch] = freq.get(ch, 0) + 1
 
-print(char_count)
+    print("\n3) Частота символов:", freq)
 
-print("\n" + "-"*50 + "\n")
 
+# =========================
 # Задание 4
-print("Задание 4")
-phone_book = {
-    "Alice": "123-456-7890",
-    "Bob": "234-567-8901",
-    "Charlie": "345-678-9012",
-    "Diana": "456-789-0123",
-    "Ethan": "567-890-1234"
-}
+# =========================
+def task4():
+    phonebook = {
+        "Ali": "87001112233",
+        "Dana": "87002223344",
+        "Arman": "87003334455",
+        "Mira": "87004445566",
+        "Dias": "87005556677"
+    }
 
-search_name = "Charlie"
-print(f"Номер {search_name}: {phone_book.get(search_name, 'Не найден')}")
+    name = "Arman"
+    print("\n4) Телефон Армана:", phonebook.get(name, "Не найден"))
 
-print("\n" + "-"*50 + "\n")
 
+# =========================
 # Задание 5
-print("Задание 5")
-words = ["cat", "dog", "cat", "bird", "dog", "dog"]
-word_counts = {}
-duplicates = []
+# =========================
+def task5():
+    words = ["cat", "dog", "cat", "bird", "dog", "dog"]
+    freq = {}
 
-for word in words:
-    if word in word_counts:
-        word_counts[word] += 1
-    else:
-        word_counts[word] = 1
+    for w in words:
+        freq[w] = freq.get(w, 0) + 1
 
-for word, count in word_counts.items():
-    if count > 1:
-        duplicates.append(word)
+    print("\n5) Повторяющиеся слова:")
+    for k, v in freq.items():
+        if v > 1:
+            print(k)
 
-print(duplicates)
 
-print("\n" + "-"*50 + "\n")
-
+# =========================
 # Задание 6
-print("Задание 6")
-str1 = "listen"
-str2 = "silent"
+# =========================
+def task6(a, b):
+    print("\n6) Анаграммы:")
 
-def are_anagrams(s1, s2):
-    if len(s1) != len(s2):
-        return False
-    count1 = {}
-    count2 = {}
-    for c in s1:
-        count1[c] = count1.get(c, 0) + 1
-    for c in s2:
-        count2[c] = count2.get(c, 0) + 1
-    return count1 == count2
+    return sorted(a) == sorted(b)
 
-print(f"Анаграммы: {are_anagrams(str1, str2)}")
 
-print("\n" + "-"*50 + "\n")
-
+# =========================
 # Задание 7
-print("Задание 7")
-products = {
-    "apple": 50,
-    "banana": 30,
-    "orange": 40
-}
+# =========================
+def task7():
+    products = {
+        "apple": 500,
+        "banana": 300
+    }
 
-# Добавление нового товара
-products["grape"] = 60
+    # добавление
+    products["orange"] = 400
 
-# Изменение цены товара
-products["banana"] = 35
+    # изменение
+    products["apple"] = 550
 
-# Удаление товара
-del products["orange"]
+    # удаление
+    del products["banana"]
 
-# Поиск цены
-search_product = "apple"
-print(f"Цена {search_product}: {products.get(search_product, 'Не найден')}")
+    # поиск
+    print("\n7) Цена apple:", products.get("apple"))
 
-print("\n" + "-"*50 + "\n")
+    print("Все товары:", products)
 
+
+# =========================
 # Задание 8
-print("Задание 8")
-numbers_list = [4, 7, 1, 9, 7, 3, 1]
-seen = set()
-first_repeat = None
+# =========================
+def task8():
+    arr = [4, 7, 1, 9, 7, 3, 1]
+    seen = set()
 
-for num in numbers_list:
-    if num in seen:
-        first_repeat = num
-        break
-    seen.add(num)
+    print("\n8) Первое повторение:")
 
-print(f"Первое повторяющееся число: {first_repeat}")
+    for x in arr:
+        if x in seen:
+            print(x)
+            return
+        seen.add(x)
 
-print("\n" + "-"*50 + "\n")
 
+# =========================
 # Задание 9
-print("Задание 9")
-text = "python is great and python is easy"
-words = text.lower().split()
-word_freq = {}
+# =========================
+def task9():
+    text = "python is great and python is easy"
+    words = text.lower().split()
 
-for word in words:
-    word_freq[word] = word_freq.get(word, 0) + 1
+    freq = {}
+    for w in words:
+        freq[w] = freq.get(w, 0) + 1
 
-most_common_word = max(word_freq, key=word_freq.get)
-print(f"Слово, которое встречается чаще всего: {most_common_word}")
+    most = max(freq, key=freq.get)
 
-print("\n" + "-"*50 + "\n")
+    print("\n9) Самое частое слово:", most)
 
-# Задание 10
-print("Задание 10")
-size = 10
-hash_table = [[] for _ in range(size)]
-numbers_to_insert = [15, 25, 35, 5, 20, 30]
 
-for num in numbers_to_insert:
-    index = num % size
-    hash_table[index].append(num)
+# =========================
+# Задание 10 (хеш-таблица)
+# =========================
+class HashTable:
+    def __init__(self, size=5):
+        self.size = size
+        self.table = [[] for _ in range(size)]
 
-print("Содержимое хеш-таблицы:")
-for i, bucket in enumerate(hash_table):
-    print(f"{i}: {bucket}")
+    def hash(self, key):
+        return key % self.size
 
-print("\n" + "-"*50 + "\n")
+    def insert(self, key):
+        index = self.hash(key)
+        self.table[index].append(key)
+
+    def display(self):
+        print("\n10) Хеш-таблица:")
+        for i, bucket in enumerate(self.table):
+            print(i, ":", bucket)
+
+
+# =========================
+# RUN ALL
+# =========================
+def main():
+    task1()
+    task2()
+    task3()
+    task4()
+    task7()
+    task8()
+    task9()
+
+    print("\n6)", task6("listen", "silent"))
+
+    ht = HashTable()
+    for x in [1, 6, 11, 16, 21]:
+        ht.insert(x)
+    ht.display()
+
+    task5()
+
+main()
